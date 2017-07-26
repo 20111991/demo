@@ -1,0 +1,37 @@
+<%= form_for @student, url: students_path do |f| %>
+	<p>
+		<%= f.label :firstname %><br>
+		<%= f.text_field :firstname %>
+	</p>
+	<p>
+		<%= f.label :lastname %><br>
+		<%= f.text_field :lastname %>
+	</p>
+	<p>
+		<%= f.label :dob %>
+		<%= date_select :dob, :birth_date %>
+	</p>
+	<p>
+		<%= f.label :rollno %><br>
+		<%= f.text_field :rollno %>
+	</p>
+	
+	<p>
+		<%= f.label :course %>
+		<%= radio_button_tag(:X, "10") %>
+        <%= label_tag(:X_10, "tenth class") %>
+        <%= radio_button_tag(:XI,"11") %>
+        <%= label_tag(:XI_11, "eleventh class") %>
+        <%= radio_button_tag(:XII, "12") %>
+        <%= label_tag(:XII_12, "twelth class") %>	
+    </p>
+    <p>
+    	<%= f.label :subject %>
+		<%= options_for_select([['Math', 1], ['Science', 2],['Punjabi', 3]]) %>
+    </p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<%end%>
+<%= link_to 'Back', students_path %>

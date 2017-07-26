@@ -1,0 +1,29 @@
+<table border="1">
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>DOB</th>
+		<th>Roll NO</th>
+		<th>Course</th>
+		<th>Subjects</th>
+		<th>Show</th>
+		<th>Update</th>
+		<th>Delete</th>
+
+	</tr>
+
+	<% @students.each do |student| %>
+		<tr>
+			<td><%= student.firstname %></td>
+			<td><%= student.lastname %></td>
+			<td><%= student.dob %></td>
+			<td><%= student.rollno %></td>
+			<td><%= student.course %></td>
+			<td><%= student.subject %></td>
+			<td><a href="/students/<%=student.id%>">show </a> </td>
+			<td><a href="/students/<%=student.id%>/edit">edit </a> </td>
+			<td><a href="/students/<%=student.id%>" data-method="delete">delete </a> </td>
+		</tr>
+	<% end %>
+	
+</table>

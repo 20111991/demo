@@ -21,6 +21,8 @@ class StudentsController < ApplicationController
 	end
 	def update
 		@student=Student.find(params[:id])
+		# params[:dob] = "#{params[:dob]['birth_date(3i)']}-#{params[:dob]['birth_date(2i)']}-#{params[:dob]['birth_date(1i)']}"
+		# binding.pry
 		@student.update(student_params)
 		redirect_to"/students"
 	end

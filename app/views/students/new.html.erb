@@ -9,7 +9,7 @@
 	</p>
 	<p>
 		<%= f.label :dob %>
-		<%= date_select :dob, :birth_date %>
+		<%= f.date_select :dob %>
 	</p>
 	<p>
 		<%= f.label :rollno %><br>
@@ -18,16 +18,16 @@
 	
 	<p>
 		<%= f.label :course %>
-		<%= radio_button_tag(:X, "10") %>
-        <%= label_tag(:X_10, "tenth class") %>
-        <%= radio_button_tag(:XI,"11") %>
-        <%= label_tag(:XI_11, "eleventh class") %>
-        <%= radio_button_tag(:XII, "12") %>
-        <%= label_tag(:XII_12, "twelth class") %>	
+		<%= f.radio_button(:course, "BCA") %>
+        <%= label_tag(:X_BCA, "BCA") %>
+        <%= f.radio_button(:course,"BBA") %>
+        <%= label_tag(:XI_BBA, "BBA") %>
+        <%= f.radio_button(:course, "BCom") %>
+        <%= label_tag(:XII_BCom, "BCom") %>	
     </p>
     <p>
     	<%= f.label :subject %>
-		<%= options_for_select([['Math', 1], ['Science', 2],['Punjabi', 3]]) %>
+		<%= f.select :subject, options_for_select([['Math'], ['Science'],['Punjabi' ]]) %>
     </p>
 	<p>
 		<%= f.submit %>

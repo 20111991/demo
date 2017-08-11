@@ -27,3 +27,63 @@
 	<% end %>
 	
 </table>
+<script>
+$(document).ready(function(){
+$("#hide").click(function(){
+$("table").hide();
+});
+$("#show").click(function(){
+$("table").show();
+});
+$("#toggle").click(function(){
+$("table").toggle();
+});
+$("#effect").click(function(){
+$("table").addClass("blue");
+});
+$("#empty").click(function(){
+$("th,td").empty();
+});
+$("#remove").click(function(){
+$("th,td").remove ();
+});
+$("#animate").click(function(){
+ var th= $("th");
+ th.animate({fontSize: '3em'},"slow");
+});
+
+});
+
+</script>
+<style>
+ .blue
+ {
+ 	background-color:red;
+
+ }
+</style><br><br>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="effect">Effect</button>
+<button id="empty">Empty</button>
+<button id="remove">Remove</button>
+<button id="animate">Animate</button><br><br>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn").click (function(){
+    	alert("hi")
+   $.ajax({
+  url: "/test",
+}).done(function(res) {
+  alert("Data: " + res.status);
+});
+});
+    });
+
+</script><br>
+<button id="btn">Send an HTTP GET request to a page and get the result back</button>
